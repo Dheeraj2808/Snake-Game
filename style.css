@@ -1,0 +1,199 @@
+/* General */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s ease;
+}
+
+/* Start Menu */
+#startMenu {
+  text-align: center;
+  padding: 30px 50px;
+  background: rgba(0, 255, 0, 0.05);
+  border: 1px solid #0f0;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #0f0;
+  backdrop-filter: blur(8px);
+  color: #0f0;
+  animation: fadeIn 0.7s ease;
+}
+
+/* Mode Buttons */
+.modeBtn {
+  padding: 12px 28px;
+  margin: 15px;
+  font-size: 18px;
+  background: linear-gradient(45deg, #0f0, #0c0);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 4px 8px #0f03;
+  transition: transform 0.2s ease;
+}
+
+.modeBtn:hover {
+  transform: scale(1.1);
+}
+
+/* Scoreboard */
+#scoreboard {
+  display: flex;
+  gap: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Canvas */
+canvas {
+  background: #111;
+  border: 4px solid #0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #0f0;
+}
+
+/* Game Over & Pause */
+#gameOver, #pausedMsg {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 20px;
+  display: none;
+}
+
+#pausedMsg {
+  color: yellow;
+}
+
+#gameOver {
+  color: red;
+}
+
+/* Controls */
+#controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#restartBtn,
+#backToMenuBtn,
+#themeToggle {
+  padding: 10px 22px;
+  font-size: 16px;
+  background-color: #0f0;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px #0f03;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#restartBtn:hover,
+#backToMenuBtn:hover,
+#themeToggle:hover {
+  background-color: #0c0;
+  transform: scale(1.05);
+}
+
+/* === THEMES === */
+
+/* Dark Theme (Default) */
+body.dark-mode {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #0f0;
+}
+body.dark-mode #scoreboard,
+body.dark-mode #pausedMsg,
+body.dark-mode #gameOver {
+  color: #0f0;
+}
+
+/* Light Theme */
+body.light-mode {
+  background: linear-gradient(135deg, #f2f2f2, #e0e0e0);
+  color: #000;
+}
+body.light-mode canvas {
+  background: #fff;
+  border-color: #444;
+}
+body.light-mode #scoreboard,
+body.light-mode #pausedMsg,
+body.light-mode #gameOver {
+  color: #000;
+}
+body.light-mode #startMenu {
+  color: #000;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px #999;
+}
+
+/* Neon Theme */
+body.neon-mode {
+  background: radial-gradient(circle, #0ff, #00f);
+  color: #0ff;
+}
+body.neon-mode canvas {
+  background: #000;
+  border-color: #0ff;
+  box-shadow: 0 0 20px #0ff;
+}
+body.neon-mode #scoreboard,
+body.neon-mode #pausedMsg,
+body.neon-mode #gameOver {
+  color: #0ff;
+  text-shadow: 0 0 8px #0ff;
+}
+
+/* Retro Theme */
+body.retro-mode {
+  background: repeating-linear-gradient(45deg, #f4d03f, #f4d03f 10px, #f39c12 10px, #f39c12 20px);
+  color: #ff6347;
+}
+body.retro-mode canvas {
+  background: #222;
+  border: 4px dashed #ff6347;
+}
+body.retro-mode #scoreboard,
+body.retro-mode #pausedMsg,
+body.retro-mode #gameOver {
+  color: #ff6347;
+}
+
+/* Matrix Theme */
+body.matrix-mode {
+  background-color: #000;
+  background-image: radial-gradient(circle at center, #0f0 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: #0f0;
+}
+body.matrix-mode canvas {
+  background: #000;
+  border: 2px solid #0f0;
+  box-shadow: 0 0 15px #0f0;
+}
+body.matrix-mode #scoreboard,
+body.matrix-mode #pausedMsg,
+body.matrix-mode #gameOver {
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

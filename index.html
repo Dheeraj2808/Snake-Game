@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snake Game Modes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="startMenu">
+    <h1>🐍 Snake Game</h1>
+    <p>Select Game Mode:</p>
+    <button class="modeBtn" onclick="initGame('classic')">🧱 Classic Mode</button>
+    <button class="modeBtn" onclick="initGame('enhanced')">✨ Enhanced Mode</button>
+    <br><br>
+    <button id="themeToggle" onclick="toggleTheme()">🎨 Toggle Theme</button>
+  </div>
+
+  <div id="gameContainer" style="display: none;">
+    <div id="scoreboard">
+      <div id="score">🎯 Score: 0</div>
+      <div id="highScore">🏆 High Score: 0</div>
+    </div>
+    <canvas id="game" width="400" height="400"></canvas>
+    <div id="gameOver">💀 Game Over!</div>
+    <div id="pausedMsg">⏸️ Game Paused</div>
+    <div id="controls">
+      <button id="restartBtn" onclick="restartGame()">🔁 Play Again</button>
+      <button id="backToMenuBtn" onclick="showMenu()">🔙 Back to Menu</button>
+    </div>
+  </div>
+
+  <audio id="eatSound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+  <audio id="gameOverSound" src="https://www.soundjay.com/button/beep-10.wav"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
